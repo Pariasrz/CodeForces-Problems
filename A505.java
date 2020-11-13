@@ -3,18 +3,21 @@ import java.util.Scanner;
 public class A505 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a word.");
 		String word = sc.next();
 		char [] characters = word.toCharArray();
 		char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+		
+		//check if the given word is palindrome
 		if(palindrome(characters) == false) {
 			char [] newCharacters = new char[characters.length + 1];
 			for(int i = 0; i < characters.length; i++) {
 				newCharacters[i] = characters[i];
 			}
 			newCharacters[newCharacters.length-1] = characters[0];
+			
+			//add the first character of the word to it's end and again check if it is polindrome
 			if (palindrome(newCharacters) == false) {
 				System.out.println("NA");
 			}
@@ -27,6 +30,8 @@ public class A505 {
 			if(word.length()%2 == 0) {	
 				String m = word.subSequence(0, word.length()/2).toString();
 				String n = word.subSequence(word.length()/2  , word.length()).toString();
+				
+				//print all possible states
 				for(int i =0; i< alphabet.length; i++) {
 					System.out.println(m + alphabet[i] + n);
 				}
