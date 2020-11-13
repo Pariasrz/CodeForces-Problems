@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//the problem is here: https://codeforces.com/problemset/problem/505/A
 public class A505 {
 
 	public static void main(String[] args) {
