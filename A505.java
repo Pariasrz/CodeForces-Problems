@@ -7,8 +7,7 @@ public class A505 {
 		System.out.println("Enter a word.");
 		String word = sc.next();
 		char [] characters = word.toCharArray();
-		char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-		
+		char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();		
 		
 		if(palindrome(characters) == false) { 
 			char [] newCharacters = new char[characters.length + 1];
@@ -30,6 +29,8 @@ public class A505 {
 			if(word.length()%2 == 0) {	
 				String m = word.subSequence(0, word.length()/2).toString();
 				String n = word.subSequence(word.length()/2  , word.length()).toString();
+				
+				//print all possible states
 				for(int i =0; i< alphabet.length; i++) {
 					System.out.println(m + alphabet[i] + n);
 				}
